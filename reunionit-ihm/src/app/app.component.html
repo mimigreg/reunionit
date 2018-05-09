@@ -1,8 +1,24 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
+  <span>
+    <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+  </span>
   <span>Reunion IT</span>
 </mat-toolbar>
-
 <mat-sidenav-container>
-  <mat-sidenav>Start</mat-sidenav>
-  <mat-sidenav-content>Main</mat-sidenav-content>
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    <mat-list>
+      <mat-list-item>
+        <button routerLink="/planning" mat-button>My Planning</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="/tasks" mat-button>My Assigned Tasks</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="/meeting" mat-button>Current Meeting</button>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
 </mat-sidenav-container>

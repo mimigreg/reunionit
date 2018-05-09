@@ -1,16 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule} from '@angular/material';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { PlanningComponent } from './planning/planning.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { MeetingComponent } from './meeting/meeting.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PlanningComponent,
+    TasksComponent,
+    MeetingComponent
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule, MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule
+    BrowserModule, FormsModule, BrowserAnimationsModule, RouterModule, AppRoutingModule,
+    MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule, MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
