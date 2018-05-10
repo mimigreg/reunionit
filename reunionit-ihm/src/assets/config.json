@@ -1,0 +1,6 @@
+{
+    "meetingsServiceUrl" : "http://localhost:3000/meetings",
+    "usersServiceUrl" : "http://localhost:3000/users",
+    "roomsServiceUrl" : "http://localhost:3000/rooms",
+    "specialDaysServiceUrl" : "http://localhost:3000/specialDays"
+}

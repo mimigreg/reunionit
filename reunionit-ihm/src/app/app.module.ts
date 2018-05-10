@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
@@ -19,7 +20,7 @@ import { MeetingComponent } from './meeting/meeting.component';
     MeetingComponent
   ],
   imports: [
-    BrowserModule, FormsModule, BrowserAnimationsModule, RouterModule, AppRoutingModule,
+    BrowserModule, FormsModule, BrowserAnimationsModule, RouterModule, AppRoutingModule, HttpClientModule,
     MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule, MatIconModule,
     MatListModule
   ],
