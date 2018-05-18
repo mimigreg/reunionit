@@ -1,0 +1,36 @@
+
+svg {
+  width: 100%;
+}
+
+svg line {
+  stroke-width: 2px;
+  stroke: gray;
+}
+
+svg text {
+  fill: white;
+}
+
+svg #tableHeader {
+  fill: purple;
+  stroke-width: 2px;
+  stroke: gray;
+}
+
+svg #hoursLegend {
+  fill: purple;
+  stroke-width: 2px;
+  stroke: gray;
+}
+
+svg .meetingZone {
+  fill: pink;
+  fill-opacity: 0.9;
+  stroke-width: 2px;
+  stroke: gray;
+}
+
+svg .meetingText {
+  fill: black;
+}

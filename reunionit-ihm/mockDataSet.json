@@ -13,7 +13,7 @@
     "id": 1,
     "utctime": "2018-05-10T09:30:00.000Z",
     "duration": "120",
-    "title": "Ultimate super fighting briefieng",
+    "title": "Something on thursday",
     "rooms": [{
       "id": 2,
       "name": "Heaven",
@@ -32,6 +32,27 @@
     }]
   }, {
     "id": 2,
+    "utctime": "2018-05-07T09:00:00.000Z",
+    "duration": "60",
+    "title": "Something on monday",
+    "rooms": [{
+      "id": 2,
+      "name": "Heaven",
+      "floor": "30"
+    }, {
+      "id": 3,
+      "name": "Madison Square Garden",
+      "floor": "1"
+    }],
+    "invited": [{
+      "id": "b12345",
+      "name": "John Doe"
+    }, {
+      "id": "b00000",
+      "name": "Bob Squarepants"
+    }]
+  }, {
+    "id": 3,
     "utctime": "2018-12-24T22:00:00.000Z",
     "duration": "60",
     "title": "Christmas presents distribution",

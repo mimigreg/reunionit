@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Meeting } from '../shared/meeting.model';
+import { MeetingsService } from '../shared/meetings.service';
 
 @Component({
   selector: 'app-meeting',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeetingComponent implements OnInit {
 
-  constructor() { }
+  activeMeeting: Meeting;
 
-  ngOnInit() {
+  constructor(private route: ActivatedRoute, private meetingService: MeetingsService) { }
+
+  async ngOnInit() {
+    const activeMeetingId = this.route.snapshot.paramMap.get('id');
+    this.activeMeeting = await this.meetingService.getMeeting(activeMeetingId);
   }
 
 }

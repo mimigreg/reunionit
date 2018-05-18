@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { ConfigService } from '../config/config.service';
 import { Meeting } from './meeting.model';
 
@@ -20,7 +20,14 @@ export class MeetingsService {
     this.backendServiceUrl = configSet.meetingsServiceUrl;
   }
 
-  getMeetings(from: Date, to: Date, who: String): Promise<Array<Meeting>> {
+  async getMeetings(from: Date, to: Date, who: String): Promise<Array<Meeting>> {
+    if (!this.backendServiceUrl) { await this.getConfig(); }
     return this.http.get<Array<Meeting>>(this.backendServiceUrl).toPromise();
+  }
+
+  async getMeeting(id: string): Promise<Meeting> {
+    if (!this.backendServiceUrl) { await this.getConfig(); }
+    const params = new HttpParams().set('id', id);
+    return this.http.get<Meeting>(this.backendServiceUrl + '/' + id).toPromise();
   }
 }
