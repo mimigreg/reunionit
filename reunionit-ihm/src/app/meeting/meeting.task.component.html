@@ -1,0 +1,23 @@
+<div>
+  <form>
+    <mat-form-field>
+      <mat-label>Qui</mat-label>
+      <input matInput type="text" id="who" name="who" [(ngModel)]="currentTask.who" (keyup)="filterUsers($event)" required [matAutocomplete]="auto"/>
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngFor="let user of filteredUsers" [value]="user">
+              {{ user.name }}
+            </mat-option>
+          </mat-autocomplete>      
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Quoi</mat-label>
+      <input matInput type="text" id="what" name="what" [(ngModel)]="currentTask.what" required />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Quand</mat-label>
+      <input matInput type="date" id="when" name="when" [(ngModel)]="currentTask.when" required />
+    </mat-form-field>
+    <button mat-button type="submit" color="primary" [mat-dialog-close]="currentTask" cdkFocusInitial>Ajouter</button>
+    <button mat-button type="cancel" color="warn" (click)="cancelNewTask()">Annuler</button>
+  </form>
+</div>

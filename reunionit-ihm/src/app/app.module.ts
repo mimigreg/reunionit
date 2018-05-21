@@ -7,13 +7,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 
-import { MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatButtonModule,
+         MatCheckboxModule,
+         MatToolbarModule,
+         MatSidenavModule,
+         MatIconModule,
+         MatListModule,
+         MatFormFieldModule,
+         MatInputModule,
+         MatGridListModule,
+         MatDialogModule,
+         MatAutocompleteModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PlanningComponent } from './planning/planning.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { MeetingComponent } from './meeting/meeting.component';
+import { MeetingTaskComponent } from './meeting/meeting.task.component';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -22,12 +33,14 @@ registerLocaleData(localeFr, 'fr');
     AppComponent,
     PlanningComponent,
     TasksComponent,
-    MeetingComponent
+    MeetingComponent,
+    MeetingTaskComponent
   ],
+  entryComponents: [ MeetingTaskComponent ],
   imports: [
     BrowserModule, FormsModule, BrowserAnimationsModule, RouterModule, AppRoutingModule, HttpClientModule,
     MatButtonModule, MatCheckboxModule, MatToolbarModule, MatSidenavModule, MatIconModule,
-    MatListModule
+    MatListModule, MatFormFieldModule, MatInputModule, MatGridListModule, MatDialogModule, MatAutocompleteModule
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'fr' } ],
   bootstrap: [AppComponent]

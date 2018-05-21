@@ -22,7 +22,7 @@ export class PlanningComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.meetings = await this.meetingService.getMeetings(undefined, undefined, 'me');
+    this.meetings = await this.meetingService.research(undefined, undefined, 'me');
   }
 
   seeMeeting(meeting: Meeting) {

@@ -7,5 +7,6 @@ export class Meeting {
     duration: number;
     title: string;
     rooms: Array<Room>;
-    users: Array<User>;
+    invited: Array<User>;
+    report: string;
 }

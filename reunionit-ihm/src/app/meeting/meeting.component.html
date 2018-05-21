@@ -1,3 +1,43 @@
-<p *ngIf="activeMeeting">
-  {{activeMeeting.id}} {{activeMeeting.title}}
-</p>
+<div *ngIf="activeMeeting">
+  <div class="infoHeader">
+    <h1>{{activeMeeting.title}}</h1>
+    <h3>{{activeMeeting.utctime| date:'EEEE dd MMMM, HH:mm':'':'fr'}}</h3>
+  </div>
+  <form>
+    <div class="whosThere">
+      <h2>Invités / Présents</h2>
+      <mat-checkbox *ngFor="let user of activeMeeting.invited">{{user.name}}</mat-checkbox>
+      <button mat-mini-fab color="primary">
+        <mat-icon aria-label="ajoute un présent">add</mat-icon>
+      </button>
+    </div>
+    <div class="whatsHappened">
+      <h2>Contenu de la réunion</h2>
+      <mat-form-field>
+        <mat-label>Titre</mat-label>
+        <input matInput type="text" id="title" name="title" [(ngModel)]="activeMeeting.title" required />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Compte-Rendu</mat-label>
+        <textarea matInput id="report" name="report" [(ngModel)]="activeMeeting.report" required></textarea>
+      </mat-form-field>
+    </div>
+    <div class="whatsLeftToDo">
+      <h2>Tâches à suivre</h2>
+      <mat-list>
+        <mat-list-item *ngFor="let task of tasksList">
+          <div class="who">{{task.who.name}}</div>
+          <div class="what">{{task.what}}</div>
+          <div class="when">{{task.when}}</div>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-mini-fab color="primary" (click)="addATask()">
+            <mat-icon aria-label="ajoute un présent">add</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <button mat-button type="submit" color="primary" (click)="save()">Enregistrer</button>
+    <button mat-button type="cancel" color="warn">Annuler</button>
+  </form>
+</div>
