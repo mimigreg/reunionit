@@ -1,5 +1,5 @@
 <div>
-  <form>
+  <form #taskForm="ngForm">
     <mat-form-field>
       <mat-label>Qui</mat-label>
       <input matInput type="text" id="who" name="who" [(ngModel)]="currentTask.who" (keyup)="filterUsers($event)" required [matAutocomplete]="auto"/>
@@ -17,7 +17,7 @@
       <mat-label>Quand</mat-label>
       <input matInput type="date" id="when" name="when" [(ngModel)]="currentTask.when" required />
     </mat-form-field>
-    <button mat-button type="submit" color="primary" [mat-dialog-close]="currentTask" cdkFocusInitial>Ajouter</button>
+    <button mat-button type="submit" color="primary" [mat-dialog-close]="currentTask" cdkFocusInitial [disabled]="!taskForm.form.valid">Ajouter</button>
     <button mat-button type="cancel" color="warn" (click)="cancelNewTask()">Annuler</button>
   </form>
 </div>

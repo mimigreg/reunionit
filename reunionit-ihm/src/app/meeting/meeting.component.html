@@ -3,7 +3,7 @@
     <h1>{{activeMeeting.title}}</h1>
     <h3>{{activeMeeting.utctime| date:'EEEE dd MMMM, HH:mm':'':'fr'}}</h3>
   </div>
-  <form>
+  <form #meetingForm="ngForm">
     <div class="whosThere">
       <h2>Invités / Présents</h2>
       <mat-checkbox *ngFor="let user of activeMeeting.invited">{{user.name}}</mat-checkbox>
@@ -37,7 +37,7 @@
         </mat-list-item>
       </mat-list>
     </div>
-    <button mat-button type="submit" color="primary" (click)="save()">Enregistrer</button>
+    <button mat-button type="submit" color="primary" [disabled]="!meetingForm.form.valid" (click)="save()">Enregistrer</button>
     <button mat-button type="cancel" color="warn">Annuler</button>
   </form>
 </div>
