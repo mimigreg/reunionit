@@ -36,7 +36,7 @@ export class MeetingTaskComponent implements OnInit {
 
     filter(name: any): User[] {
         return this.users.filter(user =>
-            user.name.toLowerCase().indexOf(name.toLowerCase()) === 0);
+            user.name.toLowerCase().indexOf(name.toLowerCase()) >= 0);
     }
 
     displayFn(user?: User): string | undefined {
